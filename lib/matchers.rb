@@ -38,7 +38,6 @@ module Matchers
   def add_to_error part
     initialize_error
     @error += part
-    puts @error
   end
 
   def initialize_error
