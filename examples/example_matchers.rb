@@ -30,3 +30,6 @@ puts check_that( check_that([1,2], has_length(3)),
 
 puts check_that( check_that([1,2], has_count(3)),
                  equals("error: expected [1, 2] to have count 3"))
+
+puts check_that( check_that([1,2], has_length( less_than 2 )),
+                 equals( "error: expected [1, 2] to have length be less than 2" ))
