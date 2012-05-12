@@ -34,6 +34,6 @@ module Matchers
   alias_method :have_count, :has_count
 
   def errors
-    @errors
+    @errors = ""
   end
 end
