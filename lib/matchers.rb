@@ -58,6 +58,7 @@ module Matchers
       add_to_error "have length #{y}"
       return -> x { x.length == y } 
     end
+    add_to_error "have length "
     -> x { y[x.length] }
   end
   alias_method :have_length, :has_length
