@@ -57,8 +57,7 @@ module Matchers
     if y.is_a? Proc
       add_to_error "have length " 
       return -> x { y[x.length] }
-    end
-    unless y.is_a? Proc
+    else
       add_to_error "have length #{y}"
       return -> x { x.length == y } 
     end
