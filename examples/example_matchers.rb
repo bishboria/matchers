@@ -18,3 +18,6 @@ puts check_that( check_that(1, is_not( equal_to 1 )),
 
 puts check_that( check_that(1, equals(2)),
                  equals("error: expected 1 to equal 2"))
+
+puts check_that( check_that(1, greater_than(2)),
+                 equals("error: expected 1 to be greather than 2"))
