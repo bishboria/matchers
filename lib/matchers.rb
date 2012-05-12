@@ -20,6 +20,7 @@ module Matchers
 
   def check_that x, y
     y[x] == true
+    reset_error
   end
 
   def has_length y
