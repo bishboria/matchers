@@ -1,6 +1,7 @@
 module ErrorMessages
   def check_that x, y
-    add_to_error "#{x} is not "
+    add_to_error "expected: #{x} is not "
+    add_to_error "line: #{__LINE__}, "
     record_result y[x]
     reset_error
   end
