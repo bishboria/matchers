@@ -39,4 +39,8 @@ module Matchers
     initialize_error
     @errors += part
   end
+
+  def initialize_error
+    @errors ||= ""
+  end
 end
