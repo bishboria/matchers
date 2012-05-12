@@ -1,6 +1,6 @@
 module ErrorMessages
   def check_that x, y
-    add_to_error "error: expected #{x} to not "
+    add_to_error "error: expected #{x} to "
     record_result y[x]
     reset_error
   end
@@ -46,6 +46,7 @@ module Matchers
   end
 
   def is_not y
+    add_to_error "not "
     -> x { !(y[x]) }
   end
   alias_method :does_not, :is_not
