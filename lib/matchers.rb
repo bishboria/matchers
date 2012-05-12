@@ -1,4 +1,7 @@
 module ErrorMessages
+  def initialize_error
+    @error ||= ""
+  end
 end
 
 module Matchers
@@ -44,10 +47,6 @@ module Matchers
   def add_to_error part
     initialize_error
     @error = part.to_s + @error
-  end
-
-  def initialize_error
-    @error ||= ""
   end
 
   def reset_error
