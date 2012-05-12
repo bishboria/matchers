@@ -60,8 +60,8 @@ module Matchers
     end
     if y.is_a? Proc
       add_to_error "have length " 
+      return -> x { y[x.length] }
     end
-    -> x { y[x.length] }
   end
   alias_method :have_length, :has_length
 
