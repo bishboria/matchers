@@ -38,4 +38,7 @@ module Matchers
   def errors
     @errors = ""
   end
+
+  def add_to_error
+  end
 end
