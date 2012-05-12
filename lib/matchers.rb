@@ -18,6 +18,7 @@ module Matchers
   alias_method :does_not, :is_not
 
   def check_that x, y
+    puts y[x]
     y[x] == true
   end
 
