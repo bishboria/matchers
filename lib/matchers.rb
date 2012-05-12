@@ -51,5 +51,6 @@ module Matchers
   end
 
   def record_result x, y
+    @correct = y[x]
   end
 end
