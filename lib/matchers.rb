@@ -14,7 +14,7 @@ module ErrorMessages
   end
 
   def record_result x, y, result
-    @correct = y[x]
+    @correct = result
   end
 
   def correct?
