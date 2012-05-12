@@ -65,13 +65,13 @@ module Matchers
   alias_method :have_length, :has_length
 
   def has_count y
-    unless y.is_a? Proc
-      add_to_error "have count #{y}"
-      return -> x { x.count == y } 
-    end
     if y.is_a? Proc
       add_to_error "have count "
       return -> x { y[x.count] } 
+    end
+    unless y.is_a? Proc
+      add_to_error "have count #{y}"
+      return -> x { x.count == y } 
     end
   end
   alias_method :have_count, :has_count
