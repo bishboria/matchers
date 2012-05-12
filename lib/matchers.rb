@@ -66,7 +66,9 @@ module Matchers
 
   def has_count y
     add_to_error "have count #{y}"
-    return -> x { x.count == y } unless y.is_a? Proc
+    unless y.is_a? Proc
+      return -> x { x.count == y } 
+    end
     -> x { y[x.count] }
   end
   alias_method :have_count, :has_count
