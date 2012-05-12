@@ -47,7 +47,7 @@ module Matchers
 
   def reset_error
     @old_error, @error = @error, ""
-    @old_error
+    @old_error unless correct?
   end
 
   def record_result x, y
