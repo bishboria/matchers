@@ -63,6 +63,11 @@ module Matchers
   end
   alias_method :have_count, :has_count
 
+  def contains y
+    add_to_error "contain #{y}"
+    -> x { x.include? y }
+  end
+
   def has method, value
     if value.is_a? Proc
       add_to_error "have #{method} "
