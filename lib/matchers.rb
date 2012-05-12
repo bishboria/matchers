@@ -55,5 +55,6 @@ module Matchers
   end
 
   def correct?
+    @correct
   end
 end
