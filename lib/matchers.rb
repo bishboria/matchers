@@ -58,7 +58,7 @@ module Matchers
       add_to_error "have length #{y}"
       return -> x { x.length == y } 
     end
-    add_to_error "have length "
+    add_to_error "have length " if y.is_a? Proc
     -> x { y[x.length] }
   end
   alias_method :have_length, :has_length
