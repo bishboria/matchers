@@ -13,7 +13,7 @@ module ErrorMessages
     @old_error unless correct?
   end
 
-  def record_result x, y
+  def record_result x, y, result
     @correct = y[x]
   end
 
@@ -46,7 +46,7 @@ module Matchers
 
   def check_that x, y
     add_to_error "#{x} is not "
-    record_result x, y
+    record_result x, y, y[x]
     reset_error
   end
 
