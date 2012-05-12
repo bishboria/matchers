@@ -68,8 +68,7 @@ module Matchers
     if y.is_a? Proc
       add_to_error "have count "
       return -> x { y[x.count] } 
-    end
-    unless y.is_a? Proc
+    else
       add_to_error "have count #{y}"
       return -> x { x.count == y } 
     end
