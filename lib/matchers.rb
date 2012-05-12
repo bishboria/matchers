@@ -19,6 +19,7 @@ module Matchers
   alias_method :does_not, :is_not
 
   def check_that x, y
+    add_to_error x
     y[x] == true
     reset_error
   end
