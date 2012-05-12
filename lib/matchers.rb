@@ -7,6 +7,19 @@ module ErrorMessages
     initialize_error
     @error = part.to_s + @error
   end
+
+  def reset_error
+    @old_error, @error = @error, ""
+    @old_error unless correct?
+  end
+
+  def record_result x, y
+    @correct = y[x]
+  end
+
+  def correct?
+    @correct
+  end
 end
 
 module Matchers
@@ -48,17 +61,4 @@ module Matchers
     -> x { y[x.count] }
   end
   alias_method :have_count, :has_count
-
-  def reset_error
-    @old_error, @error = @error, ""
-    @old_error unless correct?
-  end
-
-  def record_result x, y
-    @correct = y[x]
-  end
-
-  def correct?
-    @correct
-  end
 end
