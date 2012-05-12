@@ -46,5 +46,6 @@ module Matchers
 
   def reset_error
     @old_error, @error = @error, ""
+    @old_error
   end
 end
