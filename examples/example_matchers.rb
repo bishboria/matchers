@@ -12,7 +12,7 @@ check_that [1, 2], does_not( have_length( greater_than 2 )) # true
 
 # Introducing errors
 
-puts check_that( check_that(1, equal_to(2)),
+check_that( check_that(1, equal_to(2)),
             equal_to("1 is not equal to 2"))
 
 puts check_that 1, equals(2)
