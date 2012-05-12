@@ -1,3 +1,6 @@
+module ErrorMessages
+end
+
 module Matchers
   def equal_to y
     add_to_error "equal to #{y}"
