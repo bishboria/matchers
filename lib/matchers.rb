@@ -49,4 +49,7 @@ module Matchers
     @old_error, @error = @error, ""
     @old_error
   end
+
+  def record_result x, y
+  end
 end
