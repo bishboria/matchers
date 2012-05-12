@@ -70,7 +70,9 @@ module Matchers
       return -> x { x.count == y } 
     end
     add_to_error "have count "
-    -> x { y[x.count] } if y.is_a? Proc
+    if y.is_a? Proc
+      -> x { y[x.count] } 
+    end
   end
   alias_method :have_count, :has_count
 end
