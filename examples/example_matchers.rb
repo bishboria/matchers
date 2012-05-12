@@ -36,3 +36,5 @@ puts check_that( check_that([1,2], has_length( less_than 2 )),
 
 puts check_that( check_that([1,2], has_count( less_than 2 )),
                  equals( "error: expected [1, 2] to have count be less than 2" ))
+
+puts check_that("hello world", contains( "hello" ))
