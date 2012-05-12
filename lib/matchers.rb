@@ -1,5 +1,6 @@
 module Matchers
   def equal_to y
+    puts y
     -> x { x == y }
   end
   alias_method :equals, :equal_to
