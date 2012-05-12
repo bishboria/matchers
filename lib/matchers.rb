@@ -43,4 +43,7 @@ module Matchers
   def initialize_error
     @error ||= ""
   end
+
+  def reset_error
+  end
 end
