@@ -12,5 +12,5 @@ check_that [1, 2], does_not( have_length( greater_than 2 )) # true
 
 # Introducing errors
 
-check_that [1, 2], has_length( greater_than 3 )
-check_that errors, equal_to("[1,2], does not have length greater than 3. It is 2")
+check_that( check_that(1, equal_to(2)),
+            equal_to("1 is not equal to 2"))
