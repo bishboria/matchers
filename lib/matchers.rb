@@ -54,28 +54,22 @@ module Matchers
   alias_method :does_not, :is_not
 
   def has_length y
-    if y.is_a? Proc
-      add_to_error "have length " 
-      return -> x { y[x.length] }
-    else
-      add_to_error "have length #{y}"
-      return -> x { x.length == y } 
-    end
+    has :length, y
   end
   alias_method :have_length, :has_length
 
   def has_count y
-    has_method_value y, :count
+    has :count, y
   end
   alias_method :have_count, :has_count
 
-  def has_method_value y, method
-    if y.is_a? Proc
+  def has method, value
+    if value.is_a? Proc
       add_to_error "have #{method} "
-      return -> x { y[x.send(method)] } 
+      return -> x { value[x.send(method)] } 
     else
-      add_to_error "have #{method} #{y}"
-      return -> x { x.send(method) == y } 
+      add_to_error "have #{method} #{value}"
+      return -> x { x.send(method) == value } 
     end
   end
 end
