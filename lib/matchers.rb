@@ -20,7 +20,7 @@ module Matchers
 
   def check_that x, y
     add_to_error "#{x} is not "
-    y[x] == true
+    record_result x, y
     reset_error
   end
 
