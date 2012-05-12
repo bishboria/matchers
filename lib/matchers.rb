@@ -35,10 +35,8 @@ module Matchers
   end
   alias_method :have_count, :has_count
 
-  def errors
-    @errors = ""
-  end
-
-  def add_to_error
+  def add_to_error part
+    initialize_error
+    @errors += part
   end
 end
