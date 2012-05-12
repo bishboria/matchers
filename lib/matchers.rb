@@ -2,6 +2,11 @@ module ErrorMessages
   def initialize_error
     @error ||= ""
   end
+
+  def add_to_error part
+    initialize_error
+    @error = part.to_s + @error
+  end
 end
 
 module Matchers
@@ -43,11 +48,6 @@ module Matchers
     -> x { y[x.count] }
   end
   alias_method :have_count, :has_count
-
-  def add_to_error part
-    initialize_error
-    @error = part.to_s + @error
-  end
 
   def reset_error
     @old_error, @error = @error, ""
