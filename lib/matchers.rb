@@ -1,7 +1,6 @@
 module ErrorMessages
   def check_that x, y
-    add_to_error "expected: #{x} is not "
-    add_to_error "line: #{__LINE__}, "
+    add_to_error "error: expected #{x} to not "
     record_result y[x]
     reset_error
   end
@@ -33,7 +32,7 @@ module Matchers
   include ErrorMessages
 
   def equal_to y
-    add_to_error "equal to #{y}"
+    add_to_error "equal #{y}"
     -> x { x == y }
   end
   alias_method :equals, :equal_to
