@@ -14,13 +14,13 @@ module ErrorMessages
     @error ||= ""
   end
 
+  def record_result result
+    @correct = result
+  end
+
   def reset_error
     @old_error, @error = @error, ""
     @old_error unless correct?
-  end
-
-  def record_result result
-    @correct = result
   end
 
   def correct?
