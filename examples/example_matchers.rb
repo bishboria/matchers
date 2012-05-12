@@ -14,3 +14,6 @@ check_that [1, 2], does_not( have_length( greater_than 2 )) # true
 
 check_that 1, equals(2)
 puts check_that 1, is_not( equal_to 1 )
+
+puts check_that( check_that(1, equals(2)),
+            equals("error: expected 1 to equal 2"))
