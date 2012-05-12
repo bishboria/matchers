@@ -1,4 +1,10 @@
 module ErrorMessages
+  def check_that x, y
+    add_to_error "#{x} is not "
+    record_result y[x]
+    reset_error
+  end
+
   def initialize_error
     @error ||= ""
   end
@@ -13,7 +19,7 @@ module ErrorMessages
     @old_error unless correct?
   end
 
-  def record_result x, y, result
+  def record_result result
     @correct = result
   end
 
@@ -43,12 +49,6 @@ module Matchers
     -> x { !(y[x]) }
   end
   alias_method :does_not, :is_not
-
-  def check_that x, y
-    add_to_error "#{x} is not "
-    record_result x, y, y[x]
-    reset_error
-  end
 
   def has_length y
     return -> x { x.length == y } unless y.is_a? Proc
