@@ -1,6 +1,5 @@
 module ErrorMessages
   def check_that x, y
-    initialize_error
     add_to_error "#{x} is not "
     record_result y[x]
     reset_error
@@ -11,6 +10,7 @@ module ErrorMessages
   end
 
   def add_to_error part
+    initialize_error
     @error = part.to_s + @error
   end
 
