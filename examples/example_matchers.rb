@@ -12,4 +12,5 @@ check_that [1, 2], does_not( have_length( greater_than 2 )) # true
 
 # Introducing errors
 
-puts check_that 1, equals(2)
+check_that 1, equals(2)
+puts check_that 1, is_not( equal_to 1 )
