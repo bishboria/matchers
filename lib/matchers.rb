@@ -37,10 +37,10 @@ module Matchers
 
   def add_to_error part
     initialize_error
-    @errors += part
+    @error += part
   end
 
   def initialize_error
-    @errors ||= ""
+    @error ||= ""
   end
 end
