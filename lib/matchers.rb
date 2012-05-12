@@ -3,6 +3,7 @@ end
 
 module Matchers
   include ErrorMessages
+
   def equal_to y
     add_to_error "equal to #{y}"
     -> x { x == y }
