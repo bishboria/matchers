@@ -38,7 +38,7 @@ module Matchers
 
   def add_to_error part
     initialize_error
-    @error += part
+    @error += part.to_s
   end
 
   def initialize_error
