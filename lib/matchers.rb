@@ -32,4 +32,7 @@ module Matchers
     -> x { y[x.count] }
   end
   alias_method :have_count, :has_count
+
+  def errors
+  end
 end
