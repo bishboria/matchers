@@ -1,5 +1,5 @@
 require_relative "../lib/matchers"
-include Matchers
+include Examples
 
 examples do
   check_that 5, equal_to(5) # true
