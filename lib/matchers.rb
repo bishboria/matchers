@@ -79,6 +79,8 @@ module Matchers
   end
 end
 
-def examples &block
-  block.call
+module Examples
+  def examples &block
+    block.call
+  end
 end
