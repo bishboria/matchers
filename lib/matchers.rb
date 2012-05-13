@@ -1,6 +1,10 @@
 module ErrorMessages
   def check_that x, y
     record_result y[x]
+    record_error x
+  end
+
+  def record_error x
     add_to_error "error: expected #{x} to "
     add_new_error
     reset_error
