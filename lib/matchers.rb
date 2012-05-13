@@ -22,6 +22,8 @@ module RecordErrors
   end
 
   def record_result result
+    @example_count ||= 0
+    @example_count += 1
     @correct = result
   end
 
@@ -53,9 +55,11 @@ module Examples
     end
 
     def evaluate!
-      puts ""
+      start = Time.now
       instance_eval &@block
+      stop = Time.now
       puts @all_errors
+      puts "#{@example_count} examples run in #{stop - start} seconds\n\n"
     end
   end
 
