@@ -2,7 +2,7 @@ require_relative "../lib/matchers"
 include Examples
 
 examples do
-  check_that 5, equal_to(5) # true
+  check_that 5, equals(5) # true
   check_that 5, is_not( equal_to 5 ) # false
   check_that 5, is_not( equal_to 4 ) # true
   check_that 1, greater_than(2) # false
