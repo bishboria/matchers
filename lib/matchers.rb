@@ -80,6 +80,8 @@ module Matchers
 end
 
 module Examples
+  include Matchers
+
   def examples &block
     block.call
   end
