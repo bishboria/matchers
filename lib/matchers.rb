@@ -57,7 +57,11 @@ module Examples
       instance_eval &@block
       puts @all_errors
     end
+  end
+end
 
+module Examples
+  class Matcher
     def equal_to y
       add_to_error "equal #{y}"
       -> x { x == y }
