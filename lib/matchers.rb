@@ -3,7 +3,7 @@ require_relative "matchers/reporter"
 
 module Examples
   class Matcher
-    include RecordErrors
+    include Recorder
 
     def initialize reporter, block
       reset_all_errors

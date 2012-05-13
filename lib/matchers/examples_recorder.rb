@@ -1,5 +1,5 @@
 module Examples
-  module RecordErrors
+  module Recorder
     def check_that x, y
       record_result y[x]
       record_error x
