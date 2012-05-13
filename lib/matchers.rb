@@ -36,6 +36,10 @@ module Examples
       @block = block
     end
 
+    def evaluate!
+      @block.call
+    end
+
     def equal_to y
       add_to_error "equal #{y}"
       -> x { x == y }
