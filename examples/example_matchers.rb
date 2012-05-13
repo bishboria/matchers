@@ -10,7 +10,7 @@ examples do
   check_that [1, 2], does_not( have_length 3 ) # true
   check_that [1, 2], has_length( greater_than 1 ) # true
   check_that [1, 2], does_not( have_length( greater_than 2 )) # true
-  check_that("hello world", contains( "hello" ))
+  check_that "hello world", contains( "hello" )
 end
 
 # Introducing errors
