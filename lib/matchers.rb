@@ -43,6 +43,13 @@ module RecordErrors
   def add_new_error
     @all_errors << @error unless correct?
   end
+
+  def result start, stop
+"""
+#{@all_errors.join "\n"}
+#{@example_count} examples run in #{stop - start} seconds
+"""
+  end
 end
 
 module Examples
@@ -58,8 +65,7 @@ module Examples
       start = Time.now
       instance_eval &@block
       stop = Time.now
-      puts @all_errors
-      puts "#{@example_count} examples run in #{stop - start} seconds\n\n"
+      puts result(start, stop)
     end
   end
 
