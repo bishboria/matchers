@@ -37,7 +37,7 @@ module Examples
     end
 
     def evaluate!
-      @block.call
+      instance_eval &@block
     end
 
     def equal_to y
