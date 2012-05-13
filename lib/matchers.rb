@@ -28,6 +28,10 @@ module ErrorMessages
     @correct
   end
 
+  def reset_all_errors
+    @all_errors = []
+  end
+
   private
 
   def add_new_error
