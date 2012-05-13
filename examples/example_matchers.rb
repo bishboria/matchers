@@ -10,6 +10,7 @@ examples do
   check_that [1, 2], does_not( have_length 3 ) # true
   check_that [1, 2], has_length( greater_than 1 ) # true
   check_that [1, 2], does_not( have_length( greater_than 2 )) # true
+  check_that("hello world", contains( "hello" ))
 end
 
 # Introducing errors
@@ -39,6 +40,4 @@ examples do
 
   check_that( check_that([1,2], has_count( less_than 2 )),
               equals( "error: expected [1, 2] to have count be less than 2" ))
-
-  check_that("hello world", contains( "hello" ))
 end
