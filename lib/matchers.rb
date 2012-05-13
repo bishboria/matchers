@@ -4,15 +4,15 @@ module ErrorMessages
     record_error x
   end
 
+  def add_to_error part
+    initialize_error
+    @error = part.to_s + @error
+  end
+
   def record_error x
     add_to_error "error: expected #{x} to "
     add_new_error
     reset_error
-  end
-
-  def add_to_error part
-    initialize_error
-    @error = part.to_s + @error
   end
 
   def initialize_error
