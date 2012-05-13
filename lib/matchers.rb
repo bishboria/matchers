@@ -25,7 +25,6 @@ end
 
 module Examples
   class Matcher
-
     def has method, value
       if value.is_a? Proc
         add_to_error "have #{method} "
