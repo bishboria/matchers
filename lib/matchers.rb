@@ -58,6 +58,10 @@ module Examples
       puts @all_errors
     end
   end
+
+  def examples &block
+    Matcher.new(block).evaluate!
+  end
 end
 
 module Examples
@@ -108,9 +112,5 @@ module Examples
         return -> x { x.send(method) == value } 
       end
     end
-  end
-
-  def examples &block
-    Matcher.new(block).evaluate!
   end
 end
