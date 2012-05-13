@@ -81,6 +81,6 @@ module Examples
   end
 
   def examples &block
-    block.call
+    Matchers.new(block).evaluate!
   end
 end
