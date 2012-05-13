@@ -16,7 +16,6 @@ end
 # Introducing errors
 
 examples do
-  check_that 1, equals(2)
   check_that( check_that(1, is_not( equal_to 1 )),
               equals( "error: expected 1 to not equal 1" ))
 
