@@ -1,7 +1,3 @@
-def examples &block
-  block.call
-end
-
 module ErrorMessages
   def check_that x, y
     add_to_error "error: expected #{x} to "
@@ -81,4 +77,8 @@ module Matchers
       return -> x { x.send(method) == value } 
     end
   end
+end
+
+def examples &block
+  block.call
 end
