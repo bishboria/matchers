@@ -35,7 +35,7 @@ module ErrorMessages
   private
 
   def add_new_error
-    @all_errors << @error
+    @all_errors << @error unless correct?
   end
 end
 
