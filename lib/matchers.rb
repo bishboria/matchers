@@ -27,6 +27,12 @@ module ErrorMessages
   def correct?
     @correct
   end
+
+  private
+
+  def add_new_error
+    @all_errors << @error
+  end
 end
 
 module Examples
