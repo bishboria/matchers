@@ -25,15 +25,6 @@ end
 
 module Examples
   class Matcher
-    def contains y
-      add_to_error "contain #{y}"
-      -> x { x.include? y }
-    end
-  end
-end
-
-module Examples
-  class Matcher
 
     def has method, value
       if value.is_a? Proc
