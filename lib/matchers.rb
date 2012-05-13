@@ -28,59 +28,57 @@ module ErrorMessages
   end
 end
 
-module Matchers
-  include ErrorMessages
+module Examples
+  class Matchers
+    include ErrorMessages
 
-  def equal_to y
-    add_to_error "equal #{y}"
-    -> x { x == y }
-  end
-  alias_method :equals, :equal_to
+    def equal_to y
+      add_to_error "equal #{y}"
+      -> x { x == y }
+    end
+    alias_method :equals, :equal_to
 
-  def greater_than y
-    add_to_error "be greater than #{y}"
-    -> x { x > y }
-  end
+    def greater_than y
+      add_to_error "be greater than #{y}"
+      -> x { x > y }
+    end
 
-  def less_than y
-    add_to_error "be less than #{y}"
-    -> x { x < y }
-  end
+    def less_than y
+      add_to_error "be less than #{y}"
+      -> x { x < y }
+    end
 
-  def is_not y
-    add_to_error "not "
-    -> x { !(y[x]) }
-  end
-  alias_method :does_not, :is_not
+    def is_not y
+      add_to_error "not "
+      -> x { !(y[x]) }
+    end
+    alias_method :does_not, :is_not
 
-  def has_length y
-    has :length, y
-  end
-  alias_method :have_length, :has_length
+    def has_length y
+      has :length, y
+    end
+    alias_method :have_length, :has_length
 
-  def has_count y
-    has :count, y
-  end
-  alias_method :have_count, :has_count
+    def has_count y
+      has :count, y
+    end
+    alias_method :have_count, :has_count
 
-  def contains y
-    add_to_error "contain #{y}"
-    -> x { x.include? y }
-  end
+    def contains y
+      add_to_error "contain #{y}"
+      -> x { x.include? y }
+    end
 
-  def has method, value
-    if value.is_a? Proc
-      add_to_error "have #{method} "
-      return -> x { value[x.send(method)] } 
-    else
-      add_to_error "have #{method} #{value}"
-      return -> x { x.send(method) == value } 
+    def has method, value
+      if value.is_a? Proc
+        add_to_error "have #{method} "
+        return -> x { value[x.send(method)] } 
+      else
+        add_to_error "have #{method} #{value}"
+        return -> x { x.send(method) == value } 
+      end
     end
   end
-end
-
-module Examples
-  include Matchers
 
   def examples &block
     block.call
