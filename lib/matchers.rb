@@ -1,7 +1,7 @@
 module ErrorMessages
   def check_that x, y
-    add_to_error "error: expected #{x} to "
     record_result y[x]
+    add_to_error "error: expected #{x} to "
     reset_error
   end
 
