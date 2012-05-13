@@ -29,6 +29,11 @@ module Examples
       has :length, y
     end
     alias_method :have_length, :has_length
+  end
+end
+
+module Examples
+  class Matcher
 
     def has_count y
       has :count, y
