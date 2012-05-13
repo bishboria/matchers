@@ -1,4 +1,4 @@
-module ErrorMessages
+module RecordErrors
   def check_that x, y
     record_result y[x]
     record_error x
@@ -45,7 +45,7 @@ end
 
 module Examples
   class Matcher
-    include ErrorMessages
+    include RecordErrors
 
     def initialize block
       reset_all_errors
