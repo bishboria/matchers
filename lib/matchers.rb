@@ -44,7 +44,9 @@ module Examples
     end
 
     def evaluate!
+      puts ""
       instance_eval &@block
+      puts @all_errors
     end
 
     def equal_to y
