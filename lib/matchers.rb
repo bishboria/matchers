@@ -71,7 +71,11 @@ module Examples
       -> x { x == y }
     end
     alias_method :equals, :equal_to
+  end
+end
 
+module Examples
+  class Matcher
     def greater_than y
       add_to_error "be greater than #{y}"
       -> x { x > y }
