@@ -1,4 +1,5 @@
 def examples &block
+  block.call
 end
 
 module ErrorMessages
