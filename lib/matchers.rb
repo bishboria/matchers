@@ -1,5 +1,4 @@
-require_relative "matchers/examples_recorder"
-require_relative "matchers/reporter"
+Dir.glob(File.dirname(__FILE__) + "/matchers/*") {|file| require file}
 
 module Examples
   class Matcher
