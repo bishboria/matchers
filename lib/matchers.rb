@@ -1,3 +1,6 @@
+def examples &block
+end
+
 module ErrorMessages
   def check_that x, y
     add_to_error "error: expected #{x} to "
