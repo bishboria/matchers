@@ -40,6 +40,7 @@ module Examples
     include ErrorMessages
 
     def initialize block
+      reset_all_errors
       @block = block
     end
 
