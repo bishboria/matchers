@@ -9,6 +9,8 @@ module ErrorMessages
     @error = part.to_s + @error
   end
 
+  private
+
   def record_error x
     add_to_error "error: expected #{x} to "
     add_new_error
@@ -35,8 +37,6 @@ module ErrorMessages
   def reset_all_errors
     @all_errors = []
   end
-
-  private
 
   def add_new_error
     @all_errors << @error unless correct?
