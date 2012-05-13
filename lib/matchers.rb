@@ -32,6 +32,10 @@ module Examples
   class Matchers
     include ErrorMessages
 
+    def initialize block
+      @block = block
+    end
+
     def equal_to y
       add_to_error "equal #{y}"
       -> x { x == y }
