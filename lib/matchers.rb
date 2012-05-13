@@ -44,7 +44,7 @@ module ErrorMessages
 end
 
 module Examples
-  class Matchers
+  class Matcher
     include ErrorMessages
 
     def initialize block
@@ -107,6 +107,6 @@ module Examples
   end
 
   def examples &block
-    Matchers.new(block).evaluate!
+    Matcher.new(block).evaluate!
   end
 end
